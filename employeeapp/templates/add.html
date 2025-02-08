@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+</head>
+<body>
+    <h1>Add Employee Record</h1>
+
+    <form action="{% url 'add' %}" method="POST">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="name" required>
+        <br><br>
+
+        <label for="age">Age</label>
+        <input type="number" name="age" required>
+        <br><br>
+
+        <input type="submit" value="Add Record">
+    </form>
+
+    <!-- Link to the list of employees -->
+    <a href="{% url 'list' %}">View Employee List</a>
+</body>
+</html>
